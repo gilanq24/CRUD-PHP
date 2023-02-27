@@ -1,6 +1,10 @@
 <?php  
-
+// koneksi ke database
 $connect = mysqli_connect("localhost","root","","db_siswa");
+
+// Nama Table Sama Databasenya Sesuaikan Sendiri We.
+
+// fungsi tambah data
 
 function tambah($data){
 
@@ -16,6 +20,8 @@ function tambah($data){
 	return mysqli_affected_rows($connect);
 }
 
+// fungsi query (mengambil data dari database)
+
 function query($query){
 
 	global $connect;
@@ -29,7 +35,7 @@ function query($query){
 
 }
 
-
+// fungsi hapus
 function hapus($id) {
 
 	global $connect;
@@ -37,6 +43,8 @@ function hapus($id) {
 	return mysqli_affected_rows($connect);
 
 }
+
+// fungsi edit data
 
 function edit($data){
 
@@ -60,7 +68,7 @@ function edit($data){
 	return mysqli_affected_rows($connect);
 }
 
-
+// fungsi mencari data
 function cari($keyword){
 
 	$query = "SELECT * FROM tb_siswa WHERE 
